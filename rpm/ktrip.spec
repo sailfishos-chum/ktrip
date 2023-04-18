@@ -12,7 +12,7 @@ BuildRequires: gcc-c++
 BuildRequires: opt-kf5-kirigami2-devel
 BuildRequires: opt-kf5-kirigami-addons-dateandtime
 BuildRequires: opt-kf5-rpm-macros
-BuildRequires: kpublictransport-devel
+BuildRequires: opt-kpublictransport-devel
 BuildRequires: qqc2-breeze-style
 
 BuildRequires: opt-qt5-qtdeclarative-devel
