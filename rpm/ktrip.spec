@@ -54,8 +54,7 @@ popd
 
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications/ %{buildroot}/%{_datadir}/applications/org.kde.%{name}.desktop
 
-%files -f %{name}.lang
-%{_opt_kf5_bindir}/%{name}
-
+%files
+%{_bindir}/%{name}
 %{_datadir}/applications/org.kde.%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/org.kde.%{name}.*
