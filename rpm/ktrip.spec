@@ -9,6 +9,8 @@ Source:         https://download.kde.org/stable/plasma-mobile/%{version}/ktrip-%
 Patch1:        0001-remove-qq2-desktop-style.patch
 Patch2:        0002-desktop-qtrunner.patch
 
+%{?opt_kf5_default_filter}
+
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
 BuildRequires: gcc-c++
