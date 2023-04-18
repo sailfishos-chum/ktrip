@@ -36,20 +36,24 @@ BuildRequires: pkgconfig(zlib)
 export QTDIR=%{_opt_qt5_prefix}
 touch .git
 
+mkdir -p build
+pushd build
+
 %_opt_cmake_kf5 ../ \
 		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
 		-DCMAKE_INSTALL_PREFIX:PATH=/usr/
 %make_build
+popd
 
 %install
-%make_install -C build
-%find_lang %{name}
-desktop-file-install --dir=%{buildroot}%{_kf5_datadir}/applications/ %{buildroot}/%{_kf5_datadir}/applications/org.kde.%{name}.desktop
+pushd build
+make DESTDIR=%{buildroot} install
+popd
+
+desktop-file-install --dir=%{buildroot}%{_datadir}/applications/ %{buildroot}/%{_datadir}/applications/org.kde.%{name}.desktop
 
 %files -f %{name}.lang
 %{_opt_kf5_bindir}/%{name}
 
-%{_opt_kf5_datadir}/applications/org.kde.%{name}.desktop
-%{_opt_kf5_datadir}/icons/hicolor/*/apps/org.kde.%{name}.*
-
-%{_opt_kf5_metainfodir}/org.kde.%{name}.appdata.xml
+%{_datadir}/applications/org.kde.%{name}.desktop
+%{_datadir}/icons/hicolor/*/apps/org.kde.%{name}.*
