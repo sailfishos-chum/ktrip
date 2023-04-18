@@ -36,7 +36,9 @@ BuildRequires: pkgconfig(zlib)
 export QTDIR=%{_opt_qt5_prefix}
 touch .git
 
-%opt_cmake_kf5
+%_opt_cmake_kf5 ../ \
+		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
+		-DCMAKE_INSTALL_PREFIX:PATH=/usr/
 %make_build
 
 %install
