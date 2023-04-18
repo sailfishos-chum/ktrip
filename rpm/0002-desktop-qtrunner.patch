@@ -1,0 +1,25 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 41f8364..7feba95 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -55,7 +55,6 @@ if (ANDROID)
+ 
+ else()
+     find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets)
+-    find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS QQC2DesktopStyle)
+ endif()
+ 
+ find_package(KPublicTransport)
+diff --git a/src/org.kde.ktrip.desktop b/src/org.kde.ktrip.desktop
+index b35c740..5c972f7 100644
+--- a/src/org.kde.ktrip.desktop
++++ b/src/org.kde.ktrip.desktop
+@@ -56,7 +56,7 @@ GenericName[sv]=Kollektivtrafiknavigering
+ GenericName[tr]=Toplu Taşıma için Yol Bulucu
+ GenericName[uk]=Навігатор громадським транспортом
+ GenericName[x-test]=xxPublic transport navigatorxx
+-Exec=ktrip
++Exec=qt-runner /usr/bin/ktrip
+ Icon=org.kde.ktrip
+ Type=Application
+ Comment=Public transport navigator.

@@ -7,6 +7,7 @@ Url:            https://apps.kde.org/ktrip/
 Source:         https://download.kde.org/stable/plasma-mobile/%{version}/ktrip-%{version}.tar.xz
 
 Patch1:        0001-remove-qq2-desktop-style.patch
+Patch2:        0002-desktop-qtrunner.patch
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
