@@ -9,14 +9,14 @@ Source:         https://download.kde.org/stable/plasma-mobile/%{version}/ktrip-%
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
 BuildRequires: gcc-c++
-BuildRequires: kf5-kirigami2-addons-dateandtime
-BuildRequires: kf5-rpm-macros
+BuildRequires: opt-kf5-kirigami2-addons
+BuildRequires: opt-kf5-rpm-macros
 BuildRequires: kpublictransport-devel
 BuildRequires: qqc2-desktop-style
 BuildRequires: reuse
 
 BuildRequires: opt-qt5-qtcore-devel
-BuildRequires: opt-qt5-qtdeclarateive-devel
+BuildRequires: opt-qt5-qtdeclarative-devel
 BuildRequires: opt-qt5-qtquickcontrols2-devel
 
 BuildRequires: opt-kf5-kcodecs-devel
