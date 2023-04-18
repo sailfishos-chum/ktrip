@@ -1,5 +1,5 @@
 diff --git a/src/org.kde.ktrip.desktop b/src/org.kde.ktrip.desktop
-index b35c740..5c972f7 100644
+index b35c740..9b7d65b 100644
 --- a/src/org.kde.ktrip.desktop
 +++ b/src/org.kde.ktrip.desktop
 @@ -56,7 +56,7 @@ GenericName[sv]=Kollektivtrafiknavigering
@@ -11,3 +11,12 @@ index b35c740..5c972f7 100644
  Icon=org.kde.ktrip
  Type=Application
  Comment=Public transport navigator.
+@@ -88,3 +88,8 @@ Comment[x-test]=xxPublic transport navigator.xx
+ Terminal=false
+ Categories=Qt;KDE;Network;
+ X-KDE-FormFactor=desktop;tablet;handset;
++X-Nemo-Single-Instance=no
++X-Nemo-Application-Type=no-invoker
++
++[X-Sailjail]
++Sandboxing=Disabled
