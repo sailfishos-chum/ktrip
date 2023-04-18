@@ -54,7 +54,11 @@ popd
 
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications/ %{buildroot}/%{_datadir}/applications/org.kde.%{name}.desktop
 
+#Remove appsteam xml file - NOTE odd dir
+rm %{buildroot}/usr/%_metainfodir/org.kde.ktrip.appdata.xml
+
 %files
 %{_bindir}/%{name}
+%{_datadir}/locale/
 %{_datadir}/applications/org.kde.%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/org.kde.%{name}.*
