@@ -29,6 +29,9 @@ BuildRequires: opt-kf5-kitemmodels-devel
 
 BuildRequires: pkgconfig(zlib)
 
+Requires:      qt-runner
+Requires:      opt-kpublictransport
+
 %description
 %{summary}.
 
