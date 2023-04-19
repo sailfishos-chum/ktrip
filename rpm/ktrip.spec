@@ -47,6 +47,16 @@ Requires: opt-kpublictransport
 %description
 %{summary}.
 
+PackageName: KTrip
+Type: desktop-application
+Categories:
+  - Maps
+  - Utilities
+Custom:
+  Repo: https://invent.kde.org/utilities/ktrip
+  PackagingRepo: https://github.com/sailfishos-chum/ktrip
+Icon: https://raw.githubusercontent.com/sailfishos-chum/ktrip/main/rpm/org.kde.ktrip-256.png
+
 %prep
 %autosetup -n %{name}-%{version}/upstream -p1
 
