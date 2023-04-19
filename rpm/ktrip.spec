@@ -4,7 +4,7 @@ Release:        1%{?dist}
 License:        GPLv2+
 Summary:        Public transport navigation, allows you to find journeys between specified locations, departures for a specific station and shows real-time delay and disruption information.
 Url:            https://apps.kde.org/ktrip/
-Source:         https://download.kde.org/stable/plasma-mobile/%{version}/ktrip-%{version}.tar.xz
+Source:         ktrip-%{version}.tar.xz
 Source1:        org.kde.ktrip-86.png
 Source2:        org.kde.ktrip-108.png
 Source3:        org.kde.ktrip-128.png
@@ -36,8 +36,13 @@ BuildRequires: opt-kf5-kitemmodels-devel
 
 BuildRequires: pkgconfig(zlib)
 
-Requires:      qt-runner
-Requires:      opt-kpublictransport
+%{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
+Requires: opt-kf5-kconfig-gui
+Requires: opt-kf5-kirigami2
+Requires: opt-kf5-kirigami-addons
+Requires: opt-kf5-kcoreaddons
+Requires: qt-runner
+Requires: opt-kpublictransport
 
 %description
 %{summary}.
@@ -76,11 +81,9 @@ install -p -m644 -D %{SOURCE4} \
 	%{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/org.kde.%{name}.png
 
 
-#Remove appsteam xml file - NOTE odd dir
-rm %{buildroot}/usr/%_metainfodir/org.kde.ktrip.appdata.xml
-
 %files
 %{_bindir}/%{name}
 %{_datadir}/locale/
 %{_datadir}/applications/org.kde.%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/org.kde.%{name}.*
+%{_opt_kf5_metainfodir}/org.kde.ktrip.appdata.xml
