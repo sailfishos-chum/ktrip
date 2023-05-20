@@ -1,0 +1,25 @@
+From c23861e00a2f59897d9f7a191c7fa7337cbea082 Mon Sep 17 00:00:00 2001
+From: Rinigus Saar <rinigus.git@gmail.com>
+Date: Thu, 11 May 2023 21:38:07 +0300
+Subject: [PATCH 20/20] Add query delay to avoid calling service while typing
+ location
+
+---
+ src/qml/LocationQueryPage.qml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/qml/LocationQueryPage.qml b/src/qml/LocationQueryPage.qml
+index 2dc98e9..d8bc19a 100644
+--- a/src/qml/LocationQueryPage.qml
++++ b/src/qml/LocationQueryPage.qml
+@@ -75,6 +75,7 @@ Kirigami.ScrollablePage
+         KPT.LocationQueryModel {
+             id: queryModel
+             manager: Manager
++            queryDelay: 500
+             onLoadingChanged: {
+                 if (!loading && queryTextField.text)
+                     Qt.callLater(query)
+-- 
+2.39.3
+
