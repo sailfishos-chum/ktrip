@@ -1,5 +1,5 @@
 Name:           ktrip
-Version:        23.04.1
+Version:        23.04.3
 Release:        1%{?dist}
 License:        GPLv2+
 Summary:        Public transport navigation, allows you to find journeys between specified locations, departures for a specific station and shows real-time delay and disruption information.
@@ -70,19 +70,13 @@ Icon: https://raw.githubusercontent.com/sailfishos-chum/ktrip/main/rpm/org.kde.k
 export QTDIR=%{_opt_qt5_prefix}
 touch .git
 
-mkdir -p build
-pushd build
-
-%_opt_cmake_kf5 ../ \
+%_opt_cmake_kf5  \
 		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
 		-DCMAKE_INSTALL_PREFIX:PATH=/usr/
-%make_build
-popd
+%cmake_build
 
 %install
-pushd build
-make DESTDIR=%{buildroot} install
-popd
+%cmake_install
 
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications/ %{buildroot}/%{_datadir}/applications/org.kde.%{name}.desktop
 
