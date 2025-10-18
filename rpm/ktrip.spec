@@ -12,9 +12,7 @@ Source2:        org.kde.ktrip-108.png
 Source3:        org.kde.ktrip-128.png
 Source4:        org.kde.ktrip-256.png
 
-Patch1:        0001-remove-qq2-desktop-style.patch
-Patch2:        0002-desktop-qtrunner.patch
-Patch3:        0003-remove-kcrash.patch
+Patch0:        0000-build-for-sailfishos.patch
 
 %global __requires_exclude ^libKPublicTransport.*$
 
@@ -65,8 +63,10 @@ PackageIcon: https://raw.githubusercontent.com/sailfishos-chum/ktrip/main/rpm/or
 
 %build
 %cmake_kf6  \
-		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
-		-DCMAKE_INSTALL_PREFIX:PATH=/usr/
+        -DKDE_INSTALL_BINDIR:PATH=/usr/bin \
+        -DCMAKE_INSTALL_PREFIX:PATH=/usr/ \
+        -DSAILFISHOS:BOOL=ON \
+        %{nil}
 %cmake_build
 
 %install
@@ -76,13 +76,13 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications/ %{buildroot}/%{
 
 # copy icons
 install -p -m644 -D %{SOURCE1} \
-	%{buildroot}/%{_datadir}/icons/hicolor/86x86/apps/org.kde.%{name}.png
+    %{buildroot}/%{_datadir}/icons/hicolor/86x86/apps/org.kde.%{name}.png
 install -p -m644 -D %{SOURCE2} \
-	%{buildroot}/%{_datadir}/icons/hicolor/108x108/apps/org.kde.%{name}.png
+    %{buildroot}/%{_datadir}/icons/hicolor/108x108/apps/org.kde.%{name}.png
 install -p -m644 -D %{SOURCE3} \
-	%{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.kde.%{name}.png
+    %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.kde.%{name}.png
 install -p -m644 -D %{SOURCE4} \
-	%{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/org.kde.%{name}.png
+    %{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/org.kde.%{name}.png
 
 
 %files
