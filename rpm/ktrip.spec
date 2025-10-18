@@ -55,7 +55,7 @@ Public transport navigation, allows you to find journeys between specified
 locations, departures for a specific station and shows real-time delay and
 disruption information.
 
-PackageName: KTrip
+Title: KTrip
 Type: desktop-application
 Categories:
   - Maps
@@ -63,7 +63,7 @@ Categories:
 Custom:
   Repo: https://invent.kde.org/utilities/ktrip
   PackagingRepo: https://github.com/sailfishos-chum/ktrip
-Icon: https://raw.githubusercontent.com/sailfishos-chum/ktrip/main/rpm/org.kde.ktrip-256.png
+PackageIcon: https://raw.githubusercontent.com/sailfishos-chum/ktrip/main/rpm/org.kde.ktrip-256.png
 
 %prep
 %autosetup -n %{name}-%{version}/upstream -p1
