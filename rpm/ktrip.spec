@@ -27,10 +27,10 @@ BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
 BuildRequires: gcc-c++
 BuildRequires: kf6-kirigami-devel
-BuildRequires: kf6-kirigami-addons-dateandtime
+#BuildRequires: kf6-kirigami-addons-dateandtime
 BuildRequires: kf6-rpm-macros
 BuildRequires: kde-kpublictransport-devel
-BuildRequires: qqc2-breeze-style
+#BuildRequires: qqc2-breeze-style
 
 BuildRequires: qt6-qtdeclarative-devel
 BuildRequires: qt6-qtquickcontrols2-devel
