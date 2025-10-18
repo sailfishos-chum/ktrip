@@ -36,11 +36,11 @@ BuildRequires: kf6-kitemmodels-devel
 
 BuildRequires: pkgconfig(zlib)
 
-Requires: kf6-kconfig-gui
+Requires: qt-runner-qt6
+#Requires: kf6-kconfig-gui
 Requires: kf6-kirigami
 Requires: kf6-kirigami-addons
 Requires: kf6-kcoreaddons
-Requires: qt-runner
 Requires: kde-kpublictransport
 
 %description
