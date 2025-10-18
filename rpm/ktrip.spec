@@ -16,12 +16,6 @@ Patch1:        0001-remove-qq2-desktop-style.patch
 Patch2:        0002-desktop-qtrunner.patch
 Patch3:        0003-remove-kcrash.patch
 
-# patches added to upstream to improve functionality or fix bugs
-Patch100: git-0001-Use-geo-URI-to-show-location-on-map.patch
-Patch101: git-0002-Wait-till-location-query-has-finished-before-making-.patch
-Patch102: git-0003-Add-query-delay-to-avoid-calling-service-while-typin.patch
-
-
 %global __requires_exclude ^libKPublicTransport.*$
 
 BuildRequires: desktop-file-utils
