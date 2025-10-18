@@ -19,7 +19,7 @@ Patch3:        0003-remove-kcrash.patch
 %global __requires_exclude ^libKPublicTransport.*$
 
 BuildRequires: desktop-file-utils
-BuildRequires: extra-cmake-modules
+BuildRequires: kf6-extra-cmake-modules
 BuildRequires: gcc-c++
 BuildRequires: kf6-kirigami-devel
 #BuildRequires: kf6-kirigami-addons-dateandtime
