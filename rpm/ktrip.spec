@@ -1,8 +1,10 @@
+%global qt6_version 6.8.3
+
 Name:           ktrip
-Version:        23.04.3
+Version:        25.04.3
 Release:        1%{?dist}
 License:        GPLv2+
-Summary:        Public transport navigation, allows you to find journeys between specified locations, departures for a specific station and shows real-time delay and disruption information.
+Summary:        Public transport navigation
 Url:            https://apps.kde.org/ktrip/
 Source:         ktrip-%{version}.tar.xz
 Source1:        org.kde.ktrip-86.png
@@ -20,38 +22,38 @@ Patch102: git-0003-Add-query-delay-to-avoid-calling-service-while-typin.patch
 
 
 %global __requires_exclude ^libKPublicTransport.*$
-%{?opt_kf5_default_filter}
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
 BuildRequires: gcc-c++
-BuildRequires: opt-kf5-kirigami2-devel
-BuildRequires: opt-kf5-kirigami-addons-dateandtime
-BuildRequires: opt-kf5-rpm-macros
-BuildRequires: opt-kpublictransport-devel
+BuildRequires: kf6-kirigami-devel
+BuildRequires: kf6-kirigami-addons-dateandtime
+BuildRequires: kf6-rpm-macros
+BuildRequires: kde-kpublictransport-devel
 BuildRequires: qqc2-breeze-style
 
-BuildRequires: opt-qt5-qtdeclarative-devel
-BuildRequires: opt-qt5-qtquickcontrols2-devel
+BuildRequires: qt6-qtdeclarative-devel
+BuildRequires: qt6-qtquickcontrols2-devel
 
-BuildRequires: opt-kf5-kcodecs-devel
-BuildRequires: opt-kf5-kconfig-devel
-BuildRequires: opt-kf5-kcoreaddons-devel
-BuildRequires: opt-kf5-ki18n-devel
-BuildRequires: opt-kf5-kitemmodels-devel
+BuildRequires: kf6-kcodecs-devel
+BuildRequires: kf6-kconfig-devel
+BuildRequires: kf6-kcoreaddons-devel
+BuildRequires: kf6-ki18n-devel
+BuildRequires: kf6-kitemmodels-devel
 
 BuildRequires: pkgconfig(zlib)
 
-%{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
-Requires: opt-kf5-kconfig-gui
-Requires: opt-kf5-kirigami2
-Requires: opt-kf5-kirigami-addons
-Requires: opt-kf5-kcoreaddons
+Requires: kf6-kconfig-gui
+Requires: kf6-kirigami
+Requires: kf6-kirigami-addons
+Requires: kf6-kcoreaddons
 Requires: qt-runner
-Requires: opt-kpublictransport
+Requires: kde-kpublictransport
 
 %description
-%{summary}.
+Public transport navigation, allows you to find journeys between specified
+locations, departures for a specific station and shows real-time delay and
+disruption information.
 
 PackageName: KTrip
 Type: desktop-application
@@ -67,10 +69,7 @@ Icon: https://raw.githubusercontent.com/sailfishos-chum/ktrip/main/rpm/org.kde.k
 %autosetup -n %{name}-%{version}/upstream -p1
 
 %build
-export QTDIR=%{_opt_qt5_prefix}
-touch .git
-
-%_opt_cmake_kf5  \
+%cmake_kf6  \
 		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
 		-DCMAKE_INSTALL_PREFIX:PATH=/usr/
 %cmake_build
@@ -96,4 +95,4 @@ install -p -m644 -D %{SOURCE4} \
 %{_datadir}/locale/
 %{_datadir}/applications/org.kde.%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/org.kde.%{name}.*
-%{_opt_kf5_metainfodir}/org.kde.ktrip.appdata.xml
+%{_kf6_metainfodir}/org.kde.ktrip.appdata.xml
