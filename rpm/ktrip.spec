@@ -1,7 +1,7 @@
 %global qt6_version 6.8.3
 
 Name:           ktrip
-Version:        25.04.3
+Version:        26.04.3
 Release:        1%{?dist}
 License:        GPLv2+
 Summary:        Public transport navigation
@@ -36,7 +36,7 @@ BuildRequires: kf6-kitemmodels-devel
 
 BuildRequires: pkgconfig(zlib)
 
-Requires: qt-runner-qt6
+Requires: qt6-sailfishos-util
 #Requires: kf6-kconfig-gui
 Requires: kf6-kirigami
 Requires: kf6-kirigami-addons
