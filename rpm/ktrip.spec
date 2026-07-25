@@ -36,7 +36,7 @@ BuildRequires: kf6-kitemmodels-devel
 
 BuildRequires: pkgconfig(zlib)
 
-Requires: qt-runner-qt6
+Requires: qt6-sailfishos-util
 #Requires: kf6-kconfig-gui
 Requires: kf6-kirigami
 Requires: kf6-kirigami-addons
