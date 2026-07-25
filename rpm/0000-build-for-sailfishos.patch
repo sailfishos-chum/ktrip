@@ -91,7 +91,7 @@ index 4b9651b..93bcb97 100644
      KAboutData::setApplicationData(about);
  
 -#ifndef Q_OS_ANDROID
-+#ifndef Q_OS_ANDROID && !defined(Q_OS_SAILFISH)
++#if !defined(Q_OS_ANDROID) && !defined(Q_OS_SAILFISH)
      QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.ktrip")));
      KCrash::initialize();
  #endif
