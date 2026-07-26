@@ -37,11 +37,12 @@ BuildRequires: kf6-kitemmodels-devel
 BuildRequires: pkgconfig(zlib)
 
 Requires: qt6-sailfishos-util
-#Requires: kf6-kconfig-gui
 Requires: kf6-kirigami
 Requires: kf6-kirigami-addons
 Requires: kf6-kcoreaddons
 Requires: kde-kpublictransport
+Requires: qt6-qtlocation
+Requires: qt6-qtpositioning
 
 %description
 Public transport navigation, allows you to find journeys between specified
